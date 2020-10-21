@@ -13,14 +13,6 @@
 
 int main(void)
 {
-    DDRB = 0xFE;
-    PORTB = 0x01;
-    DDRD = 0x00;
-    PORTD = 0xFF;
-
-    unsigned char tmpB;
-    unsigned char tmpD;
-
     PORTB = 0x00;
     DDRB = 0xFF;
     PORTD = 0xFF;
@@ -35,9 +27,13 @@ int main(void)
             PORTB = 2;
         }
 
-        if (num > 5 && num < 70)
+        else if (num > 5 && num < 70)
         {
             PORTB = 4;
+        }
+        else
+        {
+            PORTB = 0;
         }
     }
 }
