@@ -29,7 +29,8 @@ int main(void)
     while (1)
     {
         tmpC = 0;
-        tmpA = PINA;
+        unsigned char tmpA1 = PINA;
+        tmpA = tmpA1 & 15;
 
         if (tmpA >= 1 && tmpA <= 2)
         {
@@ -66,7 +67,7 @@ int main(void)
             tmpC |= 64;
         }
 
-        if (getBit(tmpA, 4) && getBit(tmpA, 5) && !getBit(tmpA, 6))
+        if (getBit(tmpA1, 4) && getBit(tmpA1, 5) && !getBit(tmpA1, 6))
         {
             tmpC |= 128;
         }
