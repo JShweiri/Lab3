@@ -13,7 +13,7 @@
 
 unsigned char getBit(unsigned char data, unsigned char pos)
 {
-    return (data & (0x01 << pos);
+    return (data & (0x01 << pos));
 }
 
 int main(void)
@@ -31,15 +31,20 @@ int main(void)
 
     while (1)
     {
+        count = 0;
         tmpA = PINA;
         tmpB = PINB;
 
         for (unsigned char i = 0; i < 8; i++)
         {
             if (getBit(tmpA, i))
+            {
                 count++;
+            }
             if (getBit(tmpB, i))
+            {
                 count++;
+            }
         }
 
         PORTC = count;
