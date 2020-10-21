@@ -13,7 +13,7 @@
 
 unsigned char getBit(unsigned char data, unsigned char pos)
 {
-    return (data & (0x01 << pos));
+    return (data & (0x01 << pos);
 }
 
 int main(void)
